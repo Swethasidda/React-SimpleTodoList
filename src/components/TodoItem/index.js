@@ -7,7 +7,6 @@ class TodoItem extends Component {
     const {todoItem, deleteUser} = this.props
     const {title, id} = todoItem
     const onDelete = () => {
-      console.log(id)
       deleteUser(id)
     }
     return (

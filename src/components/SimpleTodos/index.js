@@ -43,19 +43,20 @@ class SimpleTodos extends Component {
 
   deleteUser = id => {
     const {todoList} = this.state
-    const filteredTodoList = todoList.filter(each => each.id !== id)
-    this.state({
-      todoList: filteredTodoList,
+    const filterdList = todoList.filter(each => each.id !== id)
+    this.setState({
+      todoList: filterdList,
     })
   }
 
   render() {
+    const {todoList} = this.state
     return (
       <div className="big-container">
         <div className="small-container">
           <h1 className="heading">Simple Todos</h1>
           <ul className="list-container">
-            {initialTodosList.map(each => (
+            {todoList.map(each => (
               <TodoItem
                 todoItem={each}
                 key={each.id}
